@@ -14,7 +14,7 @@ int main() {
 	#pragma omp parallel for reduction(max:max)
 	for (i = 0; i < 100; i++) {
 		max = (A[i] > max) ? A[i] : max;
-		printf("A[%d]: %d, max:%d\n", i, A[i], max);
+		printf("A[%d]: %d,\tmax:%d\n", i, A[i], max);
 	}
 
 	printf("Max: %d\n", max);	

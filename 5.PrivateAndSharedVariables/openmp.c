@@ -23,11 +23,13 @@ int main() {
 	
 		for (i = start; i < end; i++) {
 			psum += A[i];				
+			printf("Thread: %d\ti: %d\tpsum: %d\n", tid, i, psum);
 		}
 
 		#pragma omp critical
-		sum += psum;	
+		sum += psum;
+		printf("==== Thread: %d\tsum: %d ====\n", tid, sum);	
 	}
 
-	printf("Sum: %d\n", sum);
+	printf("Summation: %d\n", sum);
 }
